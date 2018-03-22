@@ -15,7 +15,7 @@ RUN echo $'#!/bin/bash\n\
 \n\
 set -e \n\
 while true; do\n\
-  curl $SCRAPE_URL | curl --data-binary @- PUSHGATEWAY_URL \n\
+  curl $SCRAPE_URL | curl --data-binary @- $PUSHGATEWAY_URL \n\
   sleep $(( INTERVAL_IN_SECONDS ))\n\
 done' > push.sh && chmod +x push.sh
 
